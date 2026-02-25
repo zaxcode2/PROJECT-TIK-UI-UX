@@ -4,16 +4,18 @@ Proyek ini adalah implementasi antarmuka **UI/UX web game arcade** yang berfokus
 
 ## Informasi Kelompok
 
-- Nama Kelompok: `Isi Nama Kelompok`
+- Nama Kelompok: `Kelompok Gambling`
 - Mata Kuliah: `UI/UX`
 - Kelas: `Isi Kelas`
 - Dosen Pengampu: `Isi Nama Dosen`
 
 Anggota:
-- `Nama Anggota 1`
-- `Nama Anggota 2`
-- `Nama Anggota 3`
-- `Nama Anggota 4`
+- `Michael` - Coder Utama
+- `Jodie` - Anggota
+- `Azril` - Anggota
+- `Dwi` - Anggota
+- `Faeyza` - Anggota
+- `Sheira` - Anggota
 
 ## Tujuan Proyek
 
