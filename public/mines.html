@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arcade Lab Mines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="mines">
+  <div id="appLoader" class="app-loader"><div class="loader-ring"></div></div>
+  <div class="bg-noise"></div>
+  <div class="bg-glow glow-left"></div>
+  <div class="bg-glow glow-right"></div>
+
+  <header class="topbar reveal">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <div>
+        <p class="tag">Virtual Credits Only</p>
+        <h1>Arcade Lab</h1>
+      </div>
+    </div>
+
+    <nav class="navlinks" aria-label="Main navigation">
+      <a class="navlink" href="index.html">Dashboard</a>
+      <div class="nav-games open">
+        <button type="button" class="navlink nav-games-btn active" aria-expanded="true">Games</button>
+        <div class="nav-games-menu">
+          <a class="nav-games-link" href="game.html">Game Floor</a>
+          <a class="nav-games-link" href="slot.html">Slot</a>
+          <a class="nav-games-link" href="dice.html">Dice</a>
+          <a class="nav-games-link active" href="mines.html">Mines</a>
+          <a class="nav-games-link" href="wheel.html">Wheel</a>
+          <a class="nav-games-link" href="chicken.html">Chicken</a>
+          <a class="nav-games-link" href="plinko.html">Plinko</a>
+        </div>
+      </div>
+    </nav>
+    <div class="top-actions">
+      <a id="userBadge" class="user-badge" href="profile.html"></a>
+      <button id="logoutBtn" type="button" class="btn btn-ghost small">Logout</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero reveal compact">
+      <p class="eyebrow">Mines Arena</p>
+      <h2>Dedicated mines page.</h2>
+    </section>
+
+    <section class="grid game-grid">
+      <article class="panel controls reveal">
+        <h3>Wallet + Bet</h3>
+        <p id="balance" class="value">1000</p>
+        <label for="betAmount">Bet Amount</label>
+        <input id="betAmount" type="number" min="10" step="10" value="50" />
+        <p class="hint">Pick safe tiles and cash out before a mine.</p>
+        <div class="actions-col">
+          <button id="topupBtn" type="button" class="btn btn-solid">+250 Credits</button>
+          <button id="resetBtn" type="button" class="btn btn-ghost">Reset Wallet</button>
+        </div>
+      </article>
+
+      <article class="panel game-card reveal">
+        <h3>Mines</h3>
+        <p id="minesStatus" class="game-substatus">Start round to reveal safe tiles and cash out before hitting a mine.</p>
+        <div id="minesBoard" class="mines-board"></div>
+        <div class="actions-row">
+          <button id="minesStartBtn" type="button" class="btn btn-solid">Start Mines</button>
+          <button id="minesCashoutBtn" type="button" class="btn btn-ghost" disabled>Cash Out</button>
+        </div>
+      </article>
+
+      <article class="panel history reveal">
+        <div class="panel-head">
+          <h3>Recent Rounds</h3>
+          <button id="clearLogBtn" type="button" class="btn btn-ghost small">Clear</button>
+        </div>
+        <ul id="historyList" class="history-list"></ul>
+      </article>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
