@@ -1,16 +1,59 @@
-# Arcade Lab UI/UX (Static)
+# Project Kelompok UI/UX - Arcade Lab
 
-This repository is prepared for GitHub Pages deployment.
+Proyek ini adalah implementasi antarmuka **UI/UX web game arcade** yang berfokus pada desain visual, navigasi antarmuka, dan pengalaman pengguna interaktif.
 
-## Live Structure
+## Informasi Kelompok
 
-- `docs/` : static site files used by GitHub Pages
-- `public/` : source copy of the same static frontend
+- Nama Kelompok: `Isi Nama Kelompok`
+- Mata Kuliah: `UI/UX`
+- Kelas: `Isi Kelas`
+- Dosen Pengampu: `Isi Nama Dosen`
 
-## Notes
+Anggota:
+- `Nama Anggota 1`
+- `Nama Anggota 2`
+- `Nama Anggota 3`
+- `Nama Anggota 4`
 
-- Login/auth feature has been removed for GitHub Pages compatibility.
-- Profile data is saved locally in the browser (`localStorage`).
-- Backend files are kept in the repository but are not used by GitHub Pages.
+## Tujuan Proyek
 
-Kelompok ...
+- Menerapkan prinsip UI/UX pada web interaktif.
+- Membuat tampilan konsisten untuk beberapa halaman game.
+- Menyediakan pengalaman pengguna yang sederhana dan responsif.
+
+## Fitur Utama
+
+- Dashboard utama dengan navigasi game.
+- Halaman game terpisah: Slot, Dice, Mines, Wheel, Chicken, dan Plinko.
+- Penyimpanan data sederhana di browser menggunakan `localStorage`.
+- Desain modern dengan animasi ringan dan responsif.
+
+## Struktur Folder
+
+- `docs/` - Folder deploy untuk GitHub Pages.
+- `public/` - Sumber frontend statis.
+- `styles.css` - Styling utama aplikasi.
+- `app.js` - Logika interaksi game dan state.
+
+## Cara Menjalankan
+
+### Opsi 1 (GitHub Pages)
+1. Push kode ke branch `main`.
+2. Buka `Settings -> Pages`.
+3. Pilih source `Deploy from a branch`.
+4. Pilih `main` dan folder `/docs`.
+5. Simpan dan tunggu proses deploy.
+
+### Opsi 2 (Lokal)
+1. Buka folder proyek.
+2. Jalankan server statis sederhana (Live Server/extension sejenis).
+3. Buka `docs/opening.html` atau `docs/index.html`.
+
+## Link Demo
+
+- GitHub Repository: `https://github.com/username/nama-repo`
+- GitHub Pages: `https://username.github.io/nama-repo/`
+
+## Catatan
+
+Versi ini disiapkan sebagai **frontend statis** agar kompatibel dengan GitHub Pages.
