@@ -1,11 +1,10 @@
 (() => {
+  const PROFILE_STORAGE_KEY = "arcade_profile_v1";
   const form = document.getElementById("profileForm");
   const usernameInput = document.getElementById("profileUsername");
   const emailInput = document.getElementById("profileEmail");
   const avatarInput = document.getElementById("profileAvatar");
   const bioInput = document.getElementById("profileBio");
-  const currentPasswordInput = document.getElementById("currentPassword");
-  const newPasswordInput = document.getElementById("newPassword");
 
   const savedLabel = document.getElementById("profileSaved");
   const message = document.getElementById("profileMessage");
@@ -31,19 +30,21 @@
     avatarPreview.src = avatar || fallbackAvatar;
   }
 
-  async function loadProfile() {
-    try {
-      const data = await window.Auth.api("/api/profile");
-      const p = data.profile;
+  function loadLocalProfile() {
+    const raw = localStorage.getItem(PROFILE_STORAGE_KEY);
+    if (!raw) return;
 
-      usernameInput.value = p.username || "";
-      emailInput.value = p.email || "";
-      avatarInput.value = p.avatar_url || "";
-      bioInput.value = p.bio || "";
-      applyPreview();
-    } catch (error) {
-      message.textContent = error.message;
+    try {
+      const profile = JSON.parse(raw);
+      usernameInput.value = profile.username || "";
+      emailInput.value = profile.email || "";
+      avatarInput.value = profile.avatar_url || "";
+      bioInput.value = profile.bio || "";
+    } catch {
+      // Ignore invalid profile data and keep defaults.
     }
+
+    applyPreview();
   }
 
   [usernameInput, emailInput, avatarInput, bioInput].forEach((el) => {
@@ -54,7 +55,7 @@
     avatarPreview.src = fallbackAvatar;
   });
 
-  form.addEventListener("submit", async (event) => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
     message.textContent = "";
     savedLabel.textContent = "";
@@ -63,30 +64,15 @@
       username: usernameInput.value.trim(),
       email: emailInput.value.trim(),
       avatar_url: avatarInput.value.trim(),
-      bio: bioInput.value.trim(),
-      current_password: currentPasswordInput.value,
-      new_password: newPasswordInput.value
+      bio: bioInput.value.trim()
     };
 
-    try {
-      const data = await window.Auth.api("/api/profile", {
-        method: "PUT",
-        body: JSON.stringify(payload)
-      });
+    localStorage.setItem(PROFILE_STORAGE_KEY, JSON.stringify(payload));
 
-      if (data.token) {
-        window.Auth.setToken(data.token);
-      }
-
-      currentPasswordInput.value = "";
-      newPasswordInput.value = "";
-      savedLabel.textContent = "Saved";
-      message.textContent = "Profile updated.";
-      applyPreview();
-    } catch (error) {
-      message.textContent = error.message;
-    }
+    savedLabel.textContent = "Saved";
+    message.textContent = "Profile saved locally in this browser.";
+    applyPreview();
   });
 
-  loadProfile();
+  loadLocalProfile();
 })();

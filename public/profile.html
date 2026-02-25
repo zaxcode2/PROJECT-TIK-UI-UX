@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -40,8 +40,7 @@
       </div>
     </nav>
     <div class="top-actions">
-      <a id="userBadge" class="user-badge" href="profile.html"></a>
-      <button id="logoutBtn" type="button" class="btn btn-ghost small">Logout</button>
+      <span id="userBadge" class="user-badge">Guest</span>
     </div>
   </header>
 
@@ -71,12 +70,6 @@
           <label for="profileBio">Bio (optional)</label>
           <textarea id="profileBio" maxlength="180" rows="4" placeholder="Short intro..."></textarea>
 
-          <label for="currentPassword">Current Password (required to change password)</label>
-          <input id="currentPassword" type="password" minlength="6" />
-
-          <label for="newPassword">New Password (optional)</label>
-          <input id="newPassword" type="password" minlength="6" />
-
           <button type="submit" class="btn btn-solid wide">Save Changes</button>
           <p id="profileMessage" class="profile-message"></p>
         </form>
@@ -93,9 +86,8 @@
       </article>
     </section>
   </main>
-
-  <script src="auth.js"></script>
   <script src="app.js"></script>
   <script src="profile.js"></script>
 </body>
 </html>
+

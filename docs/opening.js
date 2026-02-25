@@ -11,8 +11,7 @@
 
     if (pct >= 100) {
       clearInterval(timer);
-      const target = window.Auth && window.Auth.getToken() ? "index.html" : "login.html";
-      setTimeout(() => window.location.replace(target), 350);
+      setTimeout(() => window.location.replace("index.html"), 350);
     }
   }, 180);
 })();

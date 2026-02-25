@@ -92,17 +92,7 @@ const pegRadius = 4.5;
 const ballRadius = 7;
 
 function isProtectedPage() {
-  return [
-    "dashboard",
-    "game",
-    "slot",
-    "dice",
-    "mines",
-    "wheel",
-    "chicken",
-    "plinko",
-    "profile"
-  ].includes(page);
+  return false;
 }
 
 function setLoader(show) {
@@ -111,18 +101,11 @@ function setLoader(show) {
 }
 
 async function authBootstrap() {
-  if (!isProtectedPage() || !window.Auth) return true;
-
-  setLoader(true);
-  const user = await window.Auth.requireAuth();
-  if (!user) return false;
-
   if (userBadge) {
-    userBadge.textContent = user.username || user.email || "User";
-    userBadge.title = user.email || user.username || "User";
+    userBadge.textContent = "Guest";
+    userBadge.title = "Guest";
   }
 
-  window.Auth.bindLogout("logoutBtn");
   setLoader(false);
   return true;
 }
