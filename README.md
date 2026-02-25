@@ -6,11 +6,10 @@ Proyek ini adalah implementasi antarmuka **UI/UX web game arcade** yang berfokus
 
 - Nama Kelompok: `Kelompok Gambling`
 - Mata Kuliah: `UI/UX`
-- Kelas: `Isi Kelas`
-- Dosen Pengampu: `Isi Nama Dosen`
+- Kelas: `XII-11`
 
 Anggota:
-- `Michael` - Coder Utama
+- `Michael` - Programmer
 - `Jodie` - Anggota
 - `Azril` - Anggota
 - `Dwi` - Anggota
@@ -53,9 +52,5 @@ Anggota:
 
 ## Link Demo
 
-- GitHub Repository: `https://github.com/username/nama-repo`
-- GitHub Pages: `https://username.github.io/nama-repo/`
+- GitHub Repository: `https://github.com/zaxcode2/PROJECT-TIK-UI-UX`
 
-## Catatan
-
-Versi ini disiapkan sebagai **frontend statis** agar kompatibel dengan GitHub Pages.
